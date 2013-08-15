@@ -1,0 +1,79 @@
+div.mobile_bookmark_bubble {
+   position: absolute;
+   top: 0;
+   left: 0;
+   zIndex: 1000;
+   width: 100%;
+}
+
+div.mobile_bookmark_bubble_inner {
+    position: relative;
+    width: 214px;
+    margin: 0 auto;
+    border: 2px solid #fff;
+    padding: 20px 20px 20px 10px;
+    background-color: #b0c8ec;
+    background: #cddcf3 -webkit-gradient(linear, left bottom, left top, from(#b3caed), to(#cddcf3)) no-repeat bottom;
+    font: 13px/17px sans-serif;
+    -webkit-border-radius: 8px;
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+    -webkit-background-size: 100% 8px;
+}
+
+div.mobile_bookmark_bubble_inner_ipad {
+    position: relative;
+    width: 214px;
+    margin: 0 0 0 82px;
+    border: 2px solid #fff;
+    padding: 20px 20px 20px 10px;
+    background-color: #b0c8ec;
+    background: #cddcf3 -webkit-gradient(linear, left bottom, left top, from(#cddcf3), to(#b3caed)) no-repeat top;
+    font: 13px/17px sans-serif;
+    -webkit-border-radius: 8px;
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+    -webkit-background-size: 100% 8px;
+}
+
+div.mobile_bookmark_bubble_icon {
+    float: left;
+    width: 55px;
+    height: 55px;
+    margin: -2px 7px 3px 5px;
+    -webkit-border-radius: 10px;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    -webkit-background-size: 57px;
+}
+
+div.mobile_bookmark_bubble_arrow {
+    width: 25px;
+    height: 19px;
+    position: absolute;
+    left: 111px;
+    bottom: -19px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAATCAMAAABSrFY3AAABKVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAADf398AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD09PQAAAAAAAAAAAC9vb0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD19fUAAAAAAAAAAAAAAADq6uoAAAAAAAAAAAC8vLzU1NTT09MAAADg4OAAAADs7OwAAAAAAAAAAAD///+cueenwerA0vC1y+3a5fb5+/3t8vr4+v3w9PuwyOy3zO3h6vfh6vjq8Pqkv+mat+fE1fHB0/Cduuifu+iuxuuivemrxOvC1PDz9vzJ2fKpwuqmwOrb5vapw+q/0vDf6ffK2vLN3PPprJISAAAAQHRSTlMAAAEGExES7FM+JhUoQSxIRwMbNfkJUgXXBE4kDQIMHSA0Tw4xIToeTSc4Chz4OyIjPfI3QD/X5OZR6zzwLSUPrm1y3gAAAQZJREFUeF5lzsVyw0AURNE3IMsgmZmZgszQZoeZOf//EYlG5Yrhbs+im4Dj7slM5wBJ4OJ+undAUr68gK/Hyb6Bcp5yBR/w8jreNeAr5Eg2XE7g6e2/0z6cGw1JQhpmHP3u5aiPPnTTkIK48Hj9Op7bD3btAXTfgUdwYjwSDCVXMbizO0O4uDY/x4kYC5SWFnfC6N1a9RCO7i2XEmQJj2mHK1Hgp9Vq3QBRl9shuBLGhcNtHexcdQCnDUoUGetxDD+H2DQNG2xh6uAWgG2/17o1EmLqYH0Xej0UjHAaFxZIV6rJ/WK1kg7QZH8HU02zmdJinKZJaDV3TVMjM5Q9yiqYpUwiMwa/1apDXTNESjsAAAAASUVORK5CYII=');
+}
+
+div.mobile_bookmark_bubble_arrow_ipad {
+    width: 25px;
+    height: 19px;
+    position: absolute;
+    left: 111px;
+    top: -19px;
+    -webkit-transform: rotate(180deg);
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAATCAMAAABSrFY3AAABKVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAADf398AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD09PQAAAAAAAAAAAC9vb0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD19fUAAAAAAAAAAAAAAADq6uoAAAAAAAAAAAC8vLzU1NTT09MAAADg4OAAAADs7OwAAAAAAAAAAAD///+cueenwerA0vC1y+3a5fb5+/3t8vr4+v3w9PuwyOy3zO3h6vfh6vjq8Pqkv+mat+fE1fHB0/Cduuifu+iuxuuivemrxOvC1PDz9vzJ2fKpwuqmwOrb5vapw+q/0vDf6ffK2vLN3PPprJISAAAAQHRSTlMAAAEGExES7FM+JhUoQSxIRwMbNfkJUgXXBE4kDQIMHSA0Tw4xIToeTSc4Chz4OyIjPfI3QD/X5OZR6zzwLSUPrm1y3gAAAQZJREFUeF5lzsVyw0AURNE3IMsgmZmZgszQZoeZOf//EYlG5Yrhbs+im4Dj7slM5wBJ4OJ+undAUr68gK/Hyb6Bcp5yBR/w8jreNeAr5Eg2XE7g6e2/0z6cGw1JQhpmHP3u5aiPPnTTkIK48Hj9Op7bD3btAXTfgUdwYjwSDCVXMbizO0O4uDY/x4kYC5SWFnfC6N1a9RCO7i2XEmQJj2mHK1Hgp9Vq3QBRl9shuBLGhcNtHexcdQCnDUoUGetxDD+H2DQNG2xh6uAWgG2/17o1EmLqYH0Xej0UjHAaFxZIV6rJ/WK1kg7QZH8HU02zmdJinKZJaDV3TVMjM5Q9yiqYpUwiMwa/1apDXTNESjsAAAAASUVORK5CYII=');
+}
+
+a.mobile_bookmark_bubble_close {
+    position: absolute;
+    display: block;
+    top: -3px;
+    right: -3px;
+    width: 16px;
+    height: 16px;
+    border: 10px solid transparent;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAALVBMVEXM3fm+1Pfb5/rF2fjw9f23z/aavPOhwfTp8PyTt/L3+v7T4vqMs/K7zP////+qRWzhAAAAXElEQVQIW2O4CwUM996BwVskxtOqd++2rwMyPI+ve31GD8h4Madqz2mwms5jZ/aBGS/mHIDoen3m+DowY8/hOVUgxusz+zqPg7SvPA1UxQfSvu/du0YUK2AMmDMA5H1qhVX33T8AAAAASUVORK5CYII=') no-repeat;
+}
+
+
+
+    
