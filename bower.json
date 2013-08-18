@@ -1,8 +1,15 @@
 {
     "name": "mobile-bookmark-bubble-bower",
     "version": "0.0.1",
+    "main": "js/mobile_bookmark_bubble.min.js",
     "dependencies": {
     },
+    "ignore": [
+        "Gruntfile.coffee",
+        "coffee",
+        "mobile-bookmark-bubble",
+        "package.json"
+    ],
     "repository": {
         "type": "git",
         "url": "git://github.com/seiji/mobile-bookmark-bubble-bower.git"

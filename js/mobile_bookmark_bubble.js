@@ -612,25 +612,44 @@ google.bookmarkbubble.Bubble.prototype.build_ = function() {
 };
 
 /*
+# 
 #  wrapper script
 #
 */
 
 
 (function() {
-  var PARAMETER, bubble, klass;
-
-  PARAMETER = '#index';
+  var bubble, klass;
 
   klass = google.bookmarkbubble.Bubble;
 
+  klass.prototype.PARAMETER = '#mbb';
+
+  klass.prototype.INNER_HTML = 'Install this web app on your phone: tap on the arrow and then <b>\'Add to Home Screen\'</b>';
+
+  klass.prototype.INNER_HTML_OLD = 'Install this web app on your phone: tap <b style="font-size:15px">+</b> and then <b>\'Add to Home Screen\'</b>';
+
+  klass.prototype.CLASSNAME_BUBBLE = 'mobile_bookmark_bubble';
+
+  klass.prototype.CLASSNAME_BUBBLE_INNER = 'mobile_bookmark_bubble_inner';
+
+  klass.prototype.CLASSNAME_BUBBLE_INNER_IPAD = 'mobile_bookmark_bubble_inner_ipad';
+
+  klass.prototype.CLASSNAME_BUBBLE_ICON = 'mobile_bookmark_bubble_icon';
+
+  klass.prototype.CLASSNAME_BUBBLE_ARROW = 'mobile_bookmark_bubble_arrow';
+
+  klass.prototype.CLASSNAME_BUBBLE_ARROW_IPAD = 'mobile_bookmark_bubble_arrow_ipad';
+
+  klass.prototype.CLASSNAME_BUBBLE_CLOSE = 'mobile_bookmark_bubble_close';
+
   klass.prototype.hasHashParameter = function() {
-    return location.hash.indexOf(PARAMETER) !== -1;
+    return location.hash.indexOf(this.PARAMETER) !== -1;
   };
 
   klass.prototype.setHashParameter = function() {
     if (!this.hasHashParameter()) {
-      return location.hash += PARAMETER;
+      return location.hash += this.PARAMETER;
     }
   };
 
@@ -654,36 +673,23 @@ google.bookmarkbubble.Bubble.prototype.build_ = function() {
     var arrow, bubble, bubbleInner, close, icon, isIpad;
     isIpad = this.isIpad_();
     bubble = document.createElement('div');
-    bubble.className = 'mobile_bookmark_bubble';
+    bubble.className = this.CLASSNAME_BUBBLE;
     bubbleInner = document.createElement('div');
-    bubbleInner.className = isIpad ? 'mobile_bookmark_bubble_inner_ipad' : 'mobile_bookmark_bubble_inner';
+    bubbleInner.className = isIpad ? this.CLASSNAME_BUBBLE_INNER_IPAD : this.CLASSNAME_BUBBLE_INNER;
     bubble.appendChild(bubbleInner);
-    if (this.getIosVersion_() >= this.getVersion_(4, 2)) {
-      bubbleInner.innerHTML = 'Install this web app on your phone: ' + 'tap on the arrow and then <b>\'Add to Home Screen\'</b>';
-    } else {
-      bubbleInner.innerHTML = 'Install this web app on your phone: ' + 'tap <b style="font-size:15px">+</b> and then ' + '<b>\'Add to Home Screen\'</b>';
-    }
+    bubbleInner.innerHTML = this.getIosVersion_() >= this.getVersion_(4, 2) ? this.INNER_HTML : this.INNER_HTML_OLD;
     icon = document.createElement('div');
-    icon.className = 'mobile_bookmark_bubble_icon';
+    icon.className = this.CLASSNAME_BUBBLE_ICON;
     icon.style.background = '#fff url(' + this.getIconUrl_() + ') no-repeat -1px -1px';
     bubbleInner.insertBefore(icon, bubbleInner.firstChild);
     arrow = document.createElement('div');
-    arrow.className = isIpad ? 'mobile_bookmark_bubble_arrow_ipad' : 'mobile_bookmark_bubble_arrow';
+    arrow.className = isIpad ? this.CLASSNAME_BUBBLE_ARROW_IPAD : this.CLASSNAME_BUBBLE_ARROW;
     bubbleInner.appendChild(arrow);
     close = document.createElement('a');
-    close.className = 'mobile_bookmark_bubble_close';
+    close.className = this.CLASSNAME_BUBBLE_CLOSE;
     close.onclick = google.bind(this.closeClickHandler_, this);
     bubbleInner.appendChild(close);
     return bubble;
-  };
-
-  klass.prototype.show_ = function() {
-    this.element_ = this.build_();
-    document.body.appendChild(this.element_);
-    this.element_.style.WebkitTransform = 'translate3d(0,' + this.getHiddenYPosition_() + 'px,0)';
-    this.setHashParameter();
-    window.setTimeout(this.boundScrollHandler_, 1);
-    return window.addEventListener('scroll', this.boundScrollHandler_, false);
   };
 
   bubble = new klass;
