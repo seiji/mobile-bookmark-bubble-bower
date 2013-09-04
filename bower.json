@@ -1,6 +1,6 @@
 {
     "name": "mobile-bookmark-bubble-bower",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "main": "js/mobile_bookmark_bubble.min.js",
     "dependencies": {
     },
